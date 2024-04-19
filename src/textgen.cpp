@@ -1,6 +1,7 @@
 // Copyright 2024 mpv-enjoyer
 #include <fstream>
 #include <random>
+#include <functional>
 #include "textgen.h"
 
 typedef std::uniform_int_distribution<std::mt19937::result_type> std_distr;

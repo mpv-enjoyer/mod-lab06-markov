@@ -7,11 +7,11 @@ TEST(test1, setPrefix) {
     std::stringstream sstr1(str);
     TextGen generator1(sstr1, 1);
     TextGen::prefix prefix1 = { "you" };
-    EXPECT_NE(generator1.states.find(prefix1), generator1.states.end());
+    EXPECT_NE(generator1.states().find(prefix1), generator1.states().end());
     std::stringstream sstr5(str);
     TextGen generator5(sstr5, 5);
     TextGen::prefix prefix5 = { "you", "don't", "succeed", "then", "try," };
-    EXPECT_NE(generator5.states.find(prefix5), generator5.states.end());
+    EXPECT_NE(generator5.states().find(prefix5), generator5.states().end());
 }
 
 TEST(test2, checkSuffix) {
@@ -19,7 +19,7 @@ TEST(test2, checkSuffix) {
     std::stringstream sstr(str);
     TextGen generator(sstr, 5);
     TextGen::prefix prefix = { "you", "don't", "succeed", "then", "try," };
-    EXPECT_EQ(generator.states.at(prefix)[0], "try");
+    EXPECT_EQ(generator.states().at(prefix)[0], "try");
 }
 
 TEST(test3, pickSingle) {

@@ -53,3 +53,7 @@ TextGen::TextGen(std::map<prefix, std::vector<std::string>> s) : statetab(s) {
     first_prefix = s.begin().operator*().first;
     prefix_size = first_prefix.size();
 }
+
+const std::map<TextGen::prefix, std::vector<std::string>>& TextGen::states() {
+    return std::ref(statetab);
+}
